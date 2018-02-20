@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1 ID="title">Welcome to My Store</h1>
+        <p ID="subtitle">Select an item for more information and options.</p>
+        <button class="accordion">Banana</button>
+        <div class="panel">
+            <p>This is a tasty fruit that gets better if you remove the peel.</p>
+        </div>
+        <button class="accordion">Marker</button>
+        <div class="panel">
+            <p>With this you can write things on stuff.  Avoid your shirt.</p>
+        </div>
+        <button class="accordion">Car</button>
+        <div class="panel">
+            <p>Sit in this and you can go anywhere.  Or nowhere.</p>
+        </div>
+    </body>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+    </script>
+</html>

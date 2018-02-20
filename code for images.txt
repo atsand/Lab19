@@ -1,0 +1,9 @@
+<div ID="imageGrid">
+            <h1 ID="title">Welcome to The Store Store</h1>
+            <h2 ID="subtitle">Select items to add to your cart or checkout below.</h2>
+            <p ID="item1" class="imageContainer"><img src="https://images.forbes.com/media/lists/companies/best-buy_416x416.jpg"</p>
+            <p ID="item2" class="imageContainer"><img src="https://www.visitsouthwalton.com/sites/default/master/files/profiles/photos/profile_logo/walmart-logo0_f5d28ae6-5056-a36a-0769d79aad09c04b.jpg"</p>
+            <p ID="item3" class="imageContainer"><img src="http://media.corporate-ir.net/media_files/IROL/17/176060/img/logos/amazon_logo_RGB.jpg"</p>
+            <p ID="item4" class="imageContainer"><img src="https://www.custompcreview.com/wp-content/uploads/2017/10/newegg-logo.png"</p>
+        
+        </div>

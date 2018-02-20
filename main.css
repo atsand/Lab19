@@ -20,6 +20,16 @@ body{
     padding: 0 18px;
     background-color: white;
     max-height: 0;
+    width:100%;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    display:block;
+}
+.addToCartButton{
+    float:top;
+    margin-left: 4px;
+}
+.removeFromCartButton{
+    float:right;
+    margin-left: 4px;
 }

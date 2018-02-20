@@ -5,33 +5,65 @@
     <body>
         <h1 ID="title">Welcome to My Store</h1>
         <p ID="subtitle">Select an item for more information and options.</p>
-        <button class="accordion">Banana</button>
-        <div class="panel">
-            <p>This is a tasty fruit that gets better if you remove the peel.</p>
-        </div>
-        <button class="accordion">Marker</button>
-        <div class="panel">
-            <p>With this you can write things on stuff.  Avoid your shirt.</p>
-        </div>
-        <button class="accordion">Car</button>
-        <div class="panel">
-            <p>Sit in this and you can go anywhere.  Or nowhere.</p>
+        <div class="items">
+            <button class="accordion">Banana</button>
+            <div class="panel">
+                <img height= "400px" width= "300px" src="http://ask-thenutritionist.com/wp-content/uploads/2014/05/Banana-2.jpg">
+                <p>This is a tasty fruit that gets better if you remove the peel.  $0.59  </p>
+                <input type="button" class="addToCartButton" value="Add To Cart" onclick="AddToCart('Banana', 0.59)"/>
+            </div>
+            <button class="accordion">Marker</button>
+            <div class="panel">
+                <img height="520px" width ="520px" src="https://target.scene7.com/is/image/Target/14046053_Alt01?wid=520&hei=520&fmt=pjpeg">
+                <p>With this you can write things on stuff.  Avoid your shirt.  $1.50  </p>
+                <input type="button" class="addToCartButton" value="Add To Cart" onclick="AddToCart('Marker', 1.50)"/>
+            </div>
+            <button class="accordion">Car</button>
+            <div class="panel">
+                <img height="340px" width="700px" src="http://fcauthority.com/wp-content/uploads/2016/03/2017-Chrysler-300S-Sport-Appearance-Exterior-700x340.jpg">
+                <p>Sit in this and you can go anywhere.  Or nowhere.  $5.00  </p>
+                <input type="button" class="addToCartButton" value="Add To Cart" onclick="AddToCart('Car', 5.00)"/>
+            </div>
+            <button onclick="PrintCart()">Check Out</button>
+            <p ID="output"></p>
         </div>
     </body>
+
     <script>
         var acc = document.getElementsByClassName("accordion");
-var i;
+        var i;
+  
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight){
+                    panel.style.maxHeight = null;
+                } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+                });
+            }
+        
+        var shoppingCart = [];
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
+        function AddToCart(name, price){
+            var singleProduct = {
+            Name:name,
+            Price:price
+        };
+            shoppingCart.push(singleProduct);
+        }
+
+        function PrintCart(){
+            var total=0;
+            
+                document.getElementById('output').innerHTML= shoppingCart.forEach(singleProduct => {return "Item: " + singleProduct.Name + " Price: " + singleProduct.Price+"\n";
+                console.log("Item: " + singleProduct.Name + " Price: " + singleProduct.Price)
+            });
+            shoppingCart.forEach(singleProduct => {
+                total+=singleProduct.Price
+            });
+        }
     </script>
 </html>
